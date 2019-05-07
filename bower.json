@@ -11,7 +11,8 @@
   ],
   "dependencies": {
     "angular": "1.2.12",
-    "sasskit": "ssh://git@git.antwerpen.be/astad/sasskit_bower_scss.git#3.x.x"
+    "sasskit": "ssh://git@git.antwerpen.be/astad/sasskit_bower_scss.git#3.x.x",
+    "angucomplete-ie8": "^0.1.2"
   },
   "keywords": [
     "location",

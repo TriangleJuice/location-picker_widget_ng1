@@ -2,6 +2,6 @@
     'use strict';
 
     ng
-        .module('akit.component.locationPickerWidget', []);
+        .module('akit.component.locationPickerWidget', ['angucomplete-ie8']);
 
 })(window.angular);

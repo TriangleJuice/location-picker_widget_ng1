@@ -34,7 +34,7 @@
                     .getLocationsByQuery($scope.url, 'Me', vm.types)
                     .then(
                         function (result) {
-                            vm.data = result;
+                            vm.data = result.data;
                             // if (result.data) {
                             //     result.data.forEach(function (item, index, res) {
                             //         vm.loadingIndex = index;

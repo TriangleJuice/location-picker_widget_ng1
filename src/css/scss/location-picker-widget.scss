@@ -5,17 +5,76 @@
 $text-color: rgb(8, 31, 44);
 $border-color: rgb(176, 176, 176);
 $input-border-focus: rgb(192, 223, 254);
-$grey: rgb(176, 176, 176);
 $grey-lighter: rgb(243, 243, 243);
-$button-hover-color: mix($alpha-ui-color, $black, 85%);
+$grey-dark: rgb(125, 125, 125);
 $spacer: 1.5rem;
-$spacer-sm: $spacer * .75;
 $spacer-xs: $spacer * .5;
-$spacer-lg: $spacer * 2;
-$screen-xs: 30rem;;
-$text-color-xlight: $white;
-$avatar: $spacer * 1.5;
+$spinner-color: rgb(176, 176, 176);
 
 /* local variables */
 
-$border-radius: $spacer-xs;
+
+.o-auto-complete {
+
+	.is-selected {
+		background-color: $grey-lighter;
+	}
+
+	.angucomplete-dropdown {
+		border: 1px solid $border-color;
+		border-radius: 0;
+		margin-top: 0;
+		padding: 0;
+
+		ul .leaf:first-child {
+			border-top: none;
+		}
+
+		ul .leaf:last-child {
+			border-bottom: none;
+		}
+	}
+
+	.u-margin {
+		margin: $spacer-xs;
+	}
+
+	.u-text-light {
+		color: $grey-dark;
+	}
+
+	.field {
+		border-color: $border-color;
+		color: $text-color;
+		outline: none;
+
+		&:hover,
+		&:focus {
+			border-color: $border-color;
+		}
+
+		&:focus {
+			box-shadow: 0 0 0 3px $input-border-focus;
+		}
+
+		&::-webkit-input-placeholder {
+			font-style: normal;
+		}
+
+		&::-moz-placeholder {
+			font-style: normal;
+		}
+
+		&:-ms-input-placeholder {
+			font-style: normal;
+		}
+
+		&:-moz-placeholder {
+			font-style: normal;
+		}
+	}
+
+	.a-spinner {
+		color: $spinner-color;
+	}
+}
