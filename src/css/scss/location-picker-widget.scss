@@ -1,0 +1,21 @@
+@import "sasskit/dist/scss/api";
+
+/* backport styles from core branding to bower sasskit */
+
+$text-color: rgb(8, 31, 44);
+$border-color: rgb(176, 176, 176);
+$input-border-focus: rgb(192, 223, 254);
+$grey: rgb(176, 176, 176);
+$grey-lighter: rgb(243, 243, 243);
+$button-hover-color: mix($alpha-ui-color, $black, 85%);
+$spacer: 1.5rem;
+$spacer-sm: $spacer * .75;
+$spacer-xs: $spacer * .5;
+$spacer-lg: $spacer * 2;
+$screen-xs: 30rem;;
+$text-color-xlight: $white;
+$avatar: $spacer * 1.5;
+
+/* local variables */
+
+$border-radius: $spacer-xs;
