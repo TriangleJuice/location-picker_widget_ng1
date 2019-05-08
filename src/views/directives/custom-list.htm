@@ -1,8 +1,11 @@
 <div class="angucomplete-holder o-auto-complete">
     <input id="{{id}}_value" name="{{inputName}}" ng-model="searchStr" ng-disabled="disableInput" type="{{inputType}}" placeholder="{{placeholder}}" maxlength="{{maxlength}}" ng-focus="onFocusHandler()" class="{{inputClass}}" ng-focus="resetHideResults()" ng-blur="hideResults($event)" autocapitalize="off" autocorrect="off" autocomplete="off" ng-change="inputChangeHandler(searchStr)"/>
     <div id="{{id}}_dropdown" class="angucomplete-dropdown list-navigation" ng-show="showDropdown">
-        <div class="o-auto-complete__info u-text-light u-margin" ng-show="searching" ng-bind="textSearching"><span class="a-spinner a-spinner--inline a-spinner--sm u-margin-right-xs"></span></div>
-        <div class="o-auto-complete__info u-text-light u-margin" ng-show="!searching && (!results || results.length == 0)" ng-bind="textNoResults"></div>
+        <div class="o-auto-complete__info u-text-light u-margin-xs" ng-show="searching">
+            <span class="a-spinner a-spinner--inline a-spinner--sm u-margin-right-xs"></span>
+            <span ng-bind="textSearching"></span>
+        </div>
+        <div class="o-auto-complete__info u-text-light u-margin-xs" ng-show="!searching && (!results || results.length == 0)" ng-bind="textNoResults"></div>
         <ul>
             <li class="leaf" ng-repeat="result in results" ng-click="selectResult(result)" ng-mouseenter="hoverRow($index)" ng-class="{'is-selected': $index == currentIndex}">
                 <a class="leaf-link">

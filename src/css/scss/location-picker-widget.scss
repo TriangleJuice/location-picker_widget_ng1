@@ -10,71 +10,121 @@ $grey-dark: rgb(125, 125, 125);
 $spacer: 1.5rem;
 $spacer-xs: $spacer * .5;
 $spinner-color: rgb(176, 176, 176);
+$spinner-size: 28px;
+$spinner-size-sm: 22px;
+$spinner-animation-name: fa-spin;
+$spinner-animation-speed: 1200ms;
+$spinner-animation-timing: linear;
 
-/* local variables */
+/* local variables (none for now) */
 
+
+
+/* mixins */
+
+@mixin fontawesome {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: inherit;
+    font-family: FontAwesome;
+    text-rendering: auto;
+}
+
+
+/* Custom styling */
 
 .o-auto-complete {
 
-	.is-selected {
-		background-color: $grey-lighter;
-	}
+    .is-selected {
+        background-color: $grey-lighter;
+    }
 
-	.angucomplete-dropdown {
-		border: 1px solid $border-color;
-		border-radius: 0;
-		margin-top: 0;
-		padding: 0;
+    .angucomplete-dropdown {
+        border: 1px solid $border-color;
+        border-radius: 0;
+        box-shadow: .75rem .75rem 0 rgba(0,0,0,.1);
+        line-height: 1;
+        margin-top: 0;
+        max-height: 13.5rem;
+        overflow-y: scroll;
+        padding: 0;
+        width: auto;
 
-		ul .leaf:first-child {
-			border-top: none;
-		}
+        ul .leaf:first-child {
+            border-top: 0;
+        }
 
-		ul .leaf:last-child {
-			border-bottom: none;
-		}
-	}
+        ul .leaf:last-child {
+            border-bottom: 0;
+        }
+    }
 
-	.u-margin {
-		margin: $spacer-xs;
-	}
+    .u-margin {
+        &-xs {
+            margin: $spacer-xs;
+        }
 
-	.u-text-light {
-		color: $grey-dark;
-	}
+        &-right-xs {
+            margin-right: $spacer-xs !important;
+        }
+    }
 
-	.field {
-		border-color: $border-color;
-		color: $text-color;
-		outline: none;
+    .u-text-light {
+        color: $grey-dark;
+    }
 
-		&:hover,
-		&:focus {
-			border-color: $border-color;
-		}
+    .field {
+        border-color: $border-color;
+        color: $text-color;
+        outline: none;
 
-		&:focus {
-			box-shadow: 0 0 0 3px $input-border-focus;
-		}
+        &:hover,
+        &:focus {
+            border-color: $border-color;
+        }
 
-		&::-webkit-input-placeholder {
-			font-style: normal;
-		}
+        &:focus {
+            box-shadow: 0 0 0 3px $input-border-focus;
+        }
 
-		&::-moz-placeholder {
-			font-style: normal;
-		}
+        &::-webkit-input-placeholder {
+            font-style: normal;
+        }
 
-		&:-ms-input-placeholder {
-			font-style: normal;
-		}
+        &::-moz-placeholder {
+            font-style: normal;
+        }
 
-		&:-moz-placeholder {
-			font-style: normal;
-		}
-	}
+        &:-ms-input-placeholder {
+            font-style: normal;
+        }
 
-	.a-spinner {
-		color: $spinner-color;
-	}
+        &:-moz-placeholder {
+            font-style: normal;
+        }
+    }
+
+    .a-spinner {
+        color: $spinner-color;
+
+        &:before {
+            @include fontawesome;
+            animation: $spinner-animation-name $spinner-animation-speed infinite $spinner-animation-timing;
+            color: inherit;
+            content: "\f1ce";
+            display: inline-block;
+            font-size: rem($spinner-size);
+        }
+
+        &--inline {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        &--sm {
+            &:before {
+                font-size: rem($spinner-size-sm);
+            }
+        }
+    }
 }
