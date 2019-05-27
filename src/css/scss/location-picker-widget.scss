@@ -42,7 +42,7 @@ $spinner-animation-timing: linear;
     .angucomplete-dropdown {
         border: 1px solid $border-color;
         border-radius: 0;
-        box-shadow: .75rem .75rem 0 rgba(0,0,0,.1);
+        box-shadow: .75rem .75rem 0 rgba(0, 0, 0, .1);
         line-height: 1;
         margin-top: 0;
         max-height: 13.5rem;
@@ -65,12 +65,16 @@ $spinner-animation-timing: linear;
         }
 
         &-right-xs {
-            margin-right: $spacer-xs !important;
+            margin-right: $spacer-xs;
         }
     }
 
     .u-text-light {
         color: $grey-dark;
+    }
+
+    .u-text-bold {
+        font-weight: 700;
     }
 
     .field {
@@ -104,6 +108,10 @@ $spinner-animation-timing: linear;
         }
     }
 
+    .list-navigation .leaf .leaf-link {
+        padding: 1rem 1.5rem;
+    }
+
     .a-spinner {
         color: $spinner-color;
 
@@ -126,5 +134,12 @@ $spinner-animation-timing: linear;
                 font-size: rem($spinner-size-sm);
             }
         }
+    }
+
+    &__description {
+        display: block;
+        font-size: .875rem;
+        margin-top: .5625rem;
+        width: 100%;
     }
 }
