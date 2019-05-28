@@ -33,6 +33,8 @@
                 this.valueSelected = function (selected) {
                     if (selected) {
                         $scope.value = selected.originalObject;
+                    } else {
+                        $scope.value = null;
                     }
                 };
 
