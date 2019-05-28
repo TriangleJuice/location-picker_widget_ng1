@@ -4,7 +4,7 @@ With the location picker smart widget you can simply implement a location picker
 
 You will also need the BFF package in order to get the location picker smart widget to work: [http://github.com/digipolisantwerp/location-picker_service_nodejs](http://github.com/digipolisantwerp/location-picker_service_nodejs)
 
-<img src="screenshot.png" alt="Location picker screenshot" width="410" style="max-width:100%;width:100%">
+<img src="screenshot.png" alt="Location picker screenshot" width="681" style="max-width:100%;width:100%">
 
 There is a demo app, see below for instructions on running it.
 
