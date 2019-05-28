@@ -20,6 +20,7 @@
                         types: '@?',
                         value: '@?',
                         bufferInputMs: '@?',
+                        searchingText: '@?',
                         valueChange: '@?'
                     },
                     link: function (scope, element, attrs, ctrl) {

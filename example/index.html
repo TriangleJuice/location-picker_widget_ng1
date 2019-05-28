@@ -29,13 +29,13 @@
         <div class="main u-margin-top-lg">
             <aui-location-picker-widget
                 data-placeholder="TestPlaceholder"
-                data-min-length="1"
+                data-min-length="2"
                 data-no-data-message="There is no freaking data"
-                data-value=""
                 data-buffer-input-ms="500"
-                data-types="street"
-                data-value-change="{{console.log('Value changed')}}"
+                data-types="street,number,poi"
+                data-searching-text="Bezig met zoeken…"
                 data-url="http://localhost:9999/api/locations"></aui-location-picker-widget>
+            <pre style="background:#f4f4f4;padding:.25rem;max-height:50vh;overflow: auto">{{ test | json }}</pre>
         </div>
     </div>
 

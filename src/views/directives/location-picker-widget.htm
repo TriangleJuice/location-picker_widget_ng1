@@ -1,21 +1,20 @@
 <div class="a-input m-location-picker">
-	<h4>Location picker goes here</h4>
     <div class="a-input__wrapper">
-    	<!-- <aui-location-picker-autocomplete></aui-location-picker-autocomplete> -->
         <angucomplete-ie8
+            remote-url="{{ locationPicker.url }}"
+            remote-url-request-formatter="locationPicker.remoteUrlFormatData"
             placeholder="{{ locationPicker.placeholder }}"
             pause="{{ locationPicker.bufferInputMs }}"
-            selected-object="value"
-            local-data="locationPicker.data"
-            search-fields="name"
+            xinitial-value="Test"
+            selected-object="locationPicker.valueSelected"
             title-field="name"
             description-field="layer"
             match-class="u-text-bold"
             minlength="{{ locationPicker.minLength }}"
             text-no-results="{{ locationPicker.noDataMessage }}"
-            text-searching="Aan het zoeken"
+            text-searching="{{ locationPicker.searchingText }}"
             template-url="/assets/location-picker-widget/views/directives/custom-list.htm"
             input-class="field"></angucomplete-ie8>
-        <pre style="background:#f4f4f4;padding:.25rem;max-height:50vh;overflow: auto">{{ locationPicker.value | json }}</pre>
+        <!-- <pre style="background:#f4f4f4;padding:.25rem;max-height:50vh;overflow: auto">{{ locationPicker.value | json }}</pre> -->
     </div>
 </div>
