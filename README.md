@@ -27,16 +27,58 @@ Include `akit.component.locationPickerWidget` as module.
 ### In your template
 
 ```html
-<aui-location-picker-widget
-  url="http://localhost:3000/api/bff">
-</aui-location-picker-widget>
+<aui-location-picker
+    url="http://localhost:9999/api/locations"
+    data-value="location">
+</aui-location-picker>
 ```
+
+(replace the url of the BFF service)
+
+In your controller:
+
+```js
+function ($scope) {
+	$scope.picker1;
+
+	$scope.picker2 = {
+		id: '87548',
+		name: 'Piep-in-\'t-Riet',
+		layer: 'straatnaam',
+		street: 'Piep-in-\'t-Riet',
+		locationType: 'street',
+		coordinates: {
+			latLng: {
+				lat: 51.347332372152295,
+				lng: 4.321095513044615
+			},
+			lambert: {
+				x: 146677.56234668,
+				y: 226398.39632439
+			}
+		}
+	};
+}
+```
+
+Every value in the backing list must have a unique id.
 
 ### Supported attributes
 
 #### **url**
 
-`string` BFF URL.
+- **url**: the URL of the back-end service feeding this widget
+- **value**: the current value of the picker, represented as a value object
+- **placeholder**: specify the text to show in an empty field
+- **noDataMessage**: the text shown in the list when there are no matching results
+- **minLength**: the minimum number of characters typed before a search is triggered
+- **bufferInputMs**: how long to buffer keystrokes before fetching remote results
+- **types**: the type of values to search for; this is a comma-separated list of "street", "number" and/or "poi
+- **searchingText**: the text shown while searching
+
+### Events
+
+- **valueChange**: triggers when the current value is changed (or cleared): `$scope.$on("valueChange", function(event, data) { ... });`
 
 ## Run the demo app
 

@@ -22,9 +22,10 @@
                 /** searching text */
                 this.searchingText = $scope.searchingText || "Aan het zoeken";
                 /** the event fired when the value changes */
-                this.valueSelected = function (selected) {
+                this.valueChange = function (selected) {
                     if (selected) {
                         $scope.value = selected.originalObject;
+                        $scope.$emit("valueChange", selected.originalObject);
                     } else {
                         $scope.value = null;
                     }

@@ -28,7 +28,7 @@
         </header>
         <div class="main u-margin-top-lg">
             <div>
-                <aui-location-picker-widget
+                <aui-location-picker
                     data-placeholder="TestPlaceholder"
                     data-min-length="2"
                     data-no-data-message="There is no freaking data"
@@ -36,15 +36,15 @@
                     data-types="street"
                     data-value="picker1"
                     data-searching-text="Bezig met zoeken…"
-                    data-url="http://localhost:9999/api/locations"></aui-location-picker-widget>
+                    data-url="http://localhost:9999/api/locations"></aui-location-picker>
                 <pre class="a-pre" ng-if="picker1">{{ picker1 | json }}</pre>
             </div>
             <div class="u-margin-top-lg">
-                <aui-location-picker-widget
+                <aui-location-picker
                     data-min-length="2"
                     data-types="street,number,poi"
                     data-value="picker2"
-                    data-url="http://localhost:9999/api/locations"></aui-location-picker-widget>
+                    data-url="http://localhost:9999/api/locations"></aui-location-picker>
                 <pre class="a-pre" ng-if="picker2">{{ picker2 | json }}</pre>
             </div>
         </div>

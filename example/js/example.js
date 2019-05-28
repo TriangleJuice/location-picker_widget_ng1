@@ -1,14 +1,14 @@
 (function (ng) {
-    'use strict';
+	'use strict';
 
-    ng
-        .module('locationPickerWidget', ['akit.component.locationPickerWidget'])
-        .controller('locationPickerWidgetCtrl', [
-            '$scope',
-            function ($scope) {
-            	$scope.picker1;
+	ng
+		.module('locationPickerWidget', ['akit.component.locationPickerWidget'])
+		.controller('locationPickerWidgetCtrl', [
+			'$scope',
+			function ($scope) {
+				$scope.picker1;
 
-            	$scope.picker2 = {
+				$scope.picker2 = {
 					id: '87548',
 					name: 'Piep-in-\'t-Riet',
 					layer: 'straatnaam',
@@ -26,14 +26,14 @@
 					}
 				};
 
-            	this.valueChange = function (event, data) {
-            		console.log(event, data);
-            		// $scope.test = data;
-            	}
+				this.valueChange = function (event, data) {
+					console.log(event, data);
+				}
 
-            	$scope.$on("valueChange", this.valueChange);
-            }
-        ]);
+				$scope.$on("valueChange", this.valueChange);
+
+			}
+		]);
 
 // @ts-ignore
 })(window.angular);
