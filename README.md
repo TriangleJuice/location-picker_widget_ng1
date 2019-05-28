@@ -65,8 +65,6 @@ Every value in the backing list must have a unique id.
 
 ### Supported attributes
 
-#### **url**
-
 - **url**: the URL of the back-end service feeding this widget
 - **value**: the current value of the picker, represented as a value object
 - **placeholder**: specify the text to show in an empty field
