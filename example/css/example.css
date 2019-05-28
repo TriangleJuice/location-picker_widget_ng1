@@ -24,3 +24,10 @@ h1.h4 {
 .u-margin-top-lg {
     margin-top: 3rem !important;
 }
+
+.a-pre {
+    background:#f4f4f4;
+    max-height:50vh;
+    overflow: auto;
+    padding:.25rem;
+}

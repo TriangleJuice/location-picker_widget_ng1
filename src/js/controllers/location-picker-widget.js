@@ -17,20 +17,14 @@
                 this.noDataMessage = $scope.noDataMessage || "Geen resultaat gevonden";
                 /** the type of values to search for, comma-separated list of "street", "number" or "poi" */
                 this.types = $scope.types || "street,number,poi";
-                /** the value that is displayed */
-                this.value = $scope.value || null;
                 /** how long to buffer keystrokes before requesting search results */
                 this.bufferInputMs = $scope.bufferInputMs || 500;
                 /** searching text */
                 this.searchingText = $scope.searchingText || "Aan het zoeken";
                 /** the event fired when the value changes */
-                // this.valueChange = 'begin';
                 this.valueSelected = function (selected) {
                     if (selected) {
-                        vm.value = selected.originalObject;
-                        $scope.$emit("valueChange", selected.originalObject );
-                    } else {
-                        vm.value = "";
+                        $scope.value = selected.originalObject;
                     }
                 };
 

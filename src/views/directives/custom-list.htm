@@ -11,8 +11,8 @@
                 <a class="leaf-link">
                     <div ng-if="!matchClass">{{ result.title }}</div>
                     <div ng-if="matchClass" ng-bind-html="result.title"></div>
-                    <small class="u-text-light o-auto-complete__description" ng-if="!matchClass">{{ result.description }}</small>
-                    <small class="u-text-light o-auto-complete__description" ng-if="matchClass" ng-bind-html="result.description"></small>
+                    <small class="u-text-light o-auto-complete__description" ng-if="!matchClass && result.description && (result.description !== 'CRAB')">{{ result.description }}</small>
+                    <small class="u-text-light o-auto-complete__description" ng-if="matchClass && result.description && (result.description !== 'CRAB')" ng-bind-html="result.description"></small>
                 </a>
             </li>
         </ul>

@@ -10,6 +10,7 @@ $grey-dark: rgb(125, 125, 125);
 $spacer: 1.5rem;
 $spacer-xs: $spacer * .5;
 $spinner-color: rgb(176, 176, 176);
+$font-size-sm: 14px;
 $spinner-size: 28px;
 $spinner-size-sm: 22px;
 $spinner-animation-name: fa-spin;
@@ -138,7 +139,7 @@ $spinner-animation-timing: linear;
 
     &__description {
         display: block;
-        font-size: .875rem;
+        font-size: rem($font-size-sm);
         margin-top: .5625rem;
         width: 100%;
     }

@@ -18,13 +18,11 @@
                         minLength: '@?',
                         noDataMessage: '@?',
                         types: '@?',
-                        value: '@?',
                         bufferInputMs: '@?',
                         searchingText: '@?',
-                        valueChange: '@?'
+                        value: '='
                     },
                     link: function (scope, element, attrs, ctrl) {
-
                     }
                 };
 
