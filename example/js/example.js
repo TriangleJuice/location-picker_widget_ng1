@@ -26,11 +26,9 @@
 					}
 				};
 
-				this.valueChange = function (event, data) {
-					console.log(event, data);
+				$scope.valueChanged = function () {
+					console.log($scope.picker1);
 				}
-
-				$scope.$on("valueChange", this.valueChange);
 
 			}
 		]);

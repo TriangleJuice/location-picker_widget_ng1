@@ -1,18 +1,52 @@
 <div class="o-auto-complete">
-    <input name="{{ inputName }}" ng-model="searchStr" ng-disabled="disableInput" type="{{ inputType }}" placeholder="{{ placeholder }}" maxlength="{{ maxlength }}" ng-focus="onFocusHandler()" class="{{ inputClass }}" ng-focus="resetHideResults()" ng-blur="hideResults($event)" autocapitalize="off" autocorrect="off" autocomplete="off" ng-change="inputChangeHandler(searchStr)"/>
-    <div class="angucomplete-dropdown list-navigation" ng-show="showDropdown">
-        <div class="o-auto-complete__info u-text-light u-margin-xs" ng-show="searching">
+    <input
+        name="{{ inputName }}"
+        type="{{ inputType }}"
+        class="{{ inputClass }}"
+        autocapitalize="off"
+        autocorrect="off"
+        autocomplete="off"
+        placeholder="{{ placeholder }}"
+        maxlength="{{ maxlength }}"
+        ng-model="searchStr"
+        ng-disabled="disableInput"
+        ng-focus="onFocusHandler()"
+        ng-focus="resetHideResults()"
+        ng-blur="hideResults($event)"
+        ng-change="inputChangeHandler(searchStr)" />
+    <div
+        class="angucomplete-dropdown list-navigation"
+        ng-show="showDropdown">
+        <div
+            class="o-auto-complete__info u-text-light u-margin-xs"
+            ng-show="searching">
             <span class="a-spinner a-spinner--inline a-spinner--sm u-margin-right-xs"></span>
             <span ng-bind="textSearching"></span>
         </div>
-        <div class="o-auto-complete__info u-text-light u-margin-xs" ng-show="!searching && (!results || results.length == 0)" ng-bind="textNoResults"></div>
+        <div
+            class="o-auto-complete__info u-text-light u-margin-xs"
+            ng-show="!searching && (!results || results.length == 0)"
+            ng-bind="textNoResults"></div>
         <ul>
-            <li class="leaf" ng-repeat="result in results" ng-click="selectResult(result)" ng-mouseenter="hoverRow($index)" ng-class="{'is-selected': $index == currentIndex}">
+            <li
+                class="leaf"
+                ng-repeat="result in results track by $index"
+                ng-click="selectResult(result)"
+                ng-mouseenter="hoverRow($index)"
+                ng-class="{'is-selected': $index == currentIndex}">
                 <a class="leaf-link">
-                    <div ng-if="!matchClass">{{ result.title }}</div>
-                    <div ng-if="matchClass" ng-bind-html="result.title"></div>
-                    <small class="u-text-light o-auto-complete__description" ng-if="!matchClass && result.description && (result.description !== 'CRAB')">{{ result.description }}</small>
-                    <small class="u-text-light o-auto-complete__description" ng-if="matchClass && result.description && (result.description !== 'CRAB')" ng-bind-html="result.description"></small>
+                    <div
+                        ng-if="!matchClass">{{ result.title }}</div>
+                    <div
+                        ng-if="matchClass"
+                        ng-bind-html="result.title"></div>
+                    <small
+                        class="u-text-light o-auto-complete__description"
+                        ng-if="!matchClass && result.description && (result.description !== 'CRAB')">{{ result.description }}</small>
+                    <small
+                        class="u-text-light o-auto-complete__description"
+                        ng-if="matchClass && result.description && (result.description !== 'CRAB')"
+                        ng-bind-html="result.description"></small>
                 </a>
             </li>
         </ul>

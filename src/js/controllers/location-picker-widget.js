@@ -2,36 +2,42 @@
     "use strict";
 
     ng.module("akit.component.locationPickerWidget").controller(
-        "akit.component.locationPickerWidget.locationPickerWidgetController",
-        [
+        "akit.component.locationPickerWidget.locationPickerWidgetController", [
             "$scope",
             "$timeout",
             function ($scope, $timeout) {
+
+                var vm = this;
+
                 /** The URL to the BFF. */
-                this.url = $scope.url || "";
+                vm.url = $scope.url || "";
                 /** what to show in the input field when blank */
-                this.placeholder = $scope.placeholder || "";
+                vm.placeholder = $scope.placeholder || "";
                 /** minimum number of characters typed before search is triggered */
-                this.minLength = $scope.minLength || 2;
+                vm.minLength = $scope.minLength || 2;
                 /** message to show when there are no hits */
-                this.noDataMessage = $scope.noDataMessage || "Geen resultaat gevonden";
+                vm.noDataMessage = $scope.noDataMessage || "Geen resultaat gevonden";
                 /** the type of values to search for, comma-separated list of "street", "number" or "poi" */
-                this.types = $scope.types || "street,number,poi";
+                vm.types = $scope.types || "street,number,poi";
+                /** the value that is displayed */
+                vm.value = $scope.value || {};
                 /** how long to buffer keystrokes before requesting search results */
-                this.bufferInputMs = $scope.bufferInputMs || 500;
+                vm.bufferInputMs = $scope.bufferInputMs || 500;
                 /** searching text */
-                this.searchingText = $scope.searchingText || "Aan het zoeken";
+                vm.searchingText = $scope.searchingText || "Aan het zoeken";
                 /** the event fired when the value changes */
-                this.valueChange = function (selected) {
+                vm.valueChange = $scope.valueChange;
+
+                vm.test = vm.value;
+
+                vm.valueSelect = function (selected) {
                     if (selected) {
                         $scope.value = selected.originalObject;
                     } else {
                         $scope.value = null;
                     }
-                    $scope.$emit("valueChange", $scope.value);
+                    $timeout(function() { vm.valueChange(); }, 0);
                 };
-
-                var vm = this;
 
                 vm.remoteUrlFormatData = function (str) {
                     return {search: str, types: vm.types };
@@ -39,5 +45,4 @@
             }
         ]
     );
-// @ts-ignore
 })(window.angular);

@@ -14,20 +14,17 @@
                     controllerAs: 'locationPicker',
                     scope: {
                         url: '@',
+                        value: '=',
                         placeholder: '@?',
                         minLength: '@?',
                         noDataMessage: '@?',
                         types: '@?',
                         bufferInputMs: '@?',
                         searchingText: '@?',
-                        value: '='
-                    },
-                    link: function (scope, element, attrs, ctrl) {
+                        valueChange: '&?'
                     }
                 };
 
             }
         ]);
-
-// @ts-ignore
 })(window.angular);
