@@ -20,7 +20,7 @@
                 /** the type of values to search for, comma-separated list of "street", "number" or "poi" */
                 vm.types = $scope.types || "street,number,poi";
                 /** the value that is displayed */
-                vm.value = $scope.value || {};
+                vm.value = $scope.value || null;
                 /** how long to buffer keystrokes before requesting search results */
                 vm.bufferInputMs = $scope.bufferInputMs || 500;
                 /** searching text */
