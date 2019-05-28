@@ -25,10 +25,10 @@
                 this.valueChange = function (selected) {
                     if (selected) {
                         $scope.value = selected.originalObject;
-                        $scope.$emit("valueChange", selected.originalObject);
                     } else {
                         $scope.value = null;
                     }
+                    $scope.$emit("valueChange", $scope.value);
                 };
 
                 var vm = this;

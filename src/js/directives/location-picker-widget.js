@@ -3,7 +3,7 @@
 
     ng
         .module('akit.component.locationPickerWidget')
-        .directive('auiLocationPickerWidget', [
+        .directive('auiLocationPicker', [
             function () {
 
                 return {
