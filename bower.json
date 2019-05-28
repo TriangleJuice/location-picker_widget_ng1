@@ -1,6 +1,6 @@
 {
   "name": "akit-component-location-picker-widget",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "akit location picker widget",
   "main": [
     "dist/css/akit.component.location-picker-widget.css",

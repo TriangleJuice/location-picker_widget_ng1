@@ -1,6 +1,6 @@
 {
   "name": "@acpaas-ui-widgets/ng1-location-picker",
-  "version": "2.2.0",
+  "version": "0.0.1",
   "description": "akit location picker widget",
   "main": "main.js",
   "repository": {
