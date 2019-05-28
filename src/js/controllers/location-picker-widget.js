@@ -36,7 +36,7 @@
                     } else {
                         $scope.value = null;
                     }
-                    $timeout(function() { vm.valueChange(); }, 0);
+                    vm.valueChange({value: $scope.value});
                 };
 
                 vm.remoteUrlFormatData = function (str) {

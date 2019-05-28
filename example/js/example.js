@@ -26,8 +26,8 @@
 					}
 				};
 
-				$scope.valueChanged = function () {
-					console.log($scope.picker1);
+				$scope.valueChanged = function (value) {
+					console.log(value);
 				}
 
 			}
