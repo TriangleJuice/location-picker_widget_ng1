@@ -8,12 +8,6 @@ You will also need the BFF package in order to get the location picker smart wid
 
 There is a demo app, see below for instructions on running it.
 
-## Changes
-
-### v1.0.0
-
-- original release
-
 ## How to use
 
 ### Installing
