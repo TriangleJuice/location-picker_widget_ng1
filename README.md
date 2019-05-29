@@ -23,35 +23,40 @@ Include `akit.component.locationPickerWidget` as module.
 ```html
 <aui-location-picker
     url="http://localhost:9999/api/locations"
-    data-value="location">
+    data-value="location"
+    data-value-change="valueChanged(value)">
 </aui-location-picker>
 ```
 
 (replace the url of the BFF service)
 
-In your controller:
+### In your controller:
 
 ```js
 function ($scope) {
 	$scope.picker1;
 
 	$scope.picker2 = {
-		id: '87548',
+		id: 'P_DA/Locaties/MapServer/18/646468',
 		name: 'Piep-in-\'t-Riet',
 		layer: 'straatnaam',
 		street: 'Piep-in-\'t-Riet',
 		locationType: 'street',
 		coordinates: {
-			latLng: {
-				lat: 51.347332372152295,
-				lng: 4.321095513044615
-			},
 			lambert: {
-				x: 146677.56234668,
-				y: 226398.39632439
+				x: 146709.25951518,
+				y: 226440.44134237
+			},
+			latLng: {
+				lat: 51.347710435471946,
+				lng: 4.321550045455797
 			}
 		}
 	};
+
+	$scope.valueChanged = function (value) {
+		console.log(value);
+	}
 }
 ```
 
@@ -70,7 +75,7 @@ Every value in the backing list must have a unique id.
 
 ### Events
 
-- **valueChange**: triggers when the current value is changed (or cleared): `$scope.$on("valueChange", function(event, data) { ... });`
+- **valueChange**: triggers when the current value is changed (or cleared)
 
 ## Run the demo app
 
@@ -81,6 +86,12 @@ Then run `gulp build && gulp serve`, then navigate to `./example/index.html' in 
 To interact with the location picker widget you will have to set up the corresponding BFF service,
 as well as adjust necessary parameters in `example/index.html`.
 
-### Developing
+## Contributing
 
-Please refer to the [contributing guide](CONTRIBUTING.md).
+We welcome your bug reports and pull requests.
+
+Please see our [contribution guide](CONTRIBUTING.md).
+
+## License
+
+This project is published under the [MIT license](LICENSE.md).
